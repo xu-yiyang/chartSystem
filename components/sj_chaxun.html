@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<!-- 图标本地链接 -->
+	<!-- <link rel="stylesheet" href="./iconfont/iconfont.css"> -->
+	<!-- 图标在线链接 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_644589_0x9fq5zt1g85xw29.css">
+	<link rel="stylesheet" type="text/css" href="../src/plugins/layui-v2.2.6/layui/css/layui.css">
+	<link rel="stylesheet" type="text/css" href="../src/css/main.css">
+</head>
+<body>
+	<div class="xu-iframe-wrap">
+		<div class="xu-breadcrumb">
+			<span>审计</span>
+			<i>/</i>
+			<em>审计综合查询（自定义查询）</em>
+		</div>
+
+		<div class="item-tab-box">
+			<div class="iframe-item-tab" style="position: relative;top: 0;">
+				<span class="cur">查询条件</span>
+				<span>生成报告记录</span>
+			</div>
+			<div class="tab-item-main">
+				<!-- 查询条件 -->
+				<div class="tab-item">
+					<form class="layui-form" action="">
+						<div class="xu-form">
+							<div class="iframe-item xu-form-paddingTop">
+								<div class="form-item-box">
+									<div class="layui-form-item xu-form-MR270 i">
+										<label class="layui-form-label col-hui">操作时间段：</label>
+										<div class="layui-input-inline xu-form-w285">
+											<input type="text" name="date" id="date" lay-verify="date" placeholder="开始时间 到 结束时间 " autocomplete="off" class="layui-input">
+										</div>
+									</div>
+									<div class="layui-form-item i">
+										<label class="layui-form-label col-hui">访问警员账号：</label>
+										<div class="layui-input-block xu-form-w285">
+											<input type="text" name="" required  lay-verify="required" placeholder="请输入访问警员账号" autocomplete="off" class="layui-input">
+										</div>
+									</div>
+								</div>
+								<div class="form-item-box">
+									<div class="layui-form-item xu-form-MR270 i">
+										<label class="layui-form-label col-hui">访问终端地址：</label>
+										<div class="layui-input-block xu-form-w285">
+											<input type="text" name="" required  lay-verify="required" placeholder="请输入访问终端地址" autocomplete="off" class="layui-input">
+										</div>
+									</div>
+									<div class="layui-form-item i">
+										<label class="layui-form-label col-hui">访问摄像头地址：</label>
+										<div class="layui-input-block xu-form-w285">
+											<input type="text" name="" required  lay-verify="required" placeholder="请输入访问摄像头地址" autocomplete="off" class="layui-input">
+										</div>
+									</div>
+								</div>
+								<div class="form-item-box">
+									<div class="layui-form-item xu-form-MR270 i">
+										<label class="layui-form-label col-hui">警员警种：</label>
+										<div class="layui-input-block xu-form-w285">
+											<select name="jy" lay-verify="required">
+												<option value=""></option>
+												<option value="0">交警</option>
+												<option value="1">交管</option>
+											</select>
+										</div>
+									</div>
+									<div class="layui-form-item i">
+										<label class="layui-form-label col-hui">操作类型：</label>
+										<div class="layui-input-block xu-form-w285">
+											<select name="lx" lay-verify="required">
+												<option value=""></option>
+												<option value="0">类型0</option>
+												<option value="1">类型1</option>
+												<option value="2">类型2</option>
+												<option value="3">类型3</option>
+												<option value="4">类型4</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="form-item-box">
+									<div class="layui-form-item">
+										<label class="layui-form-label col-hui">部署区县：  </label>
+										<div class="layui-input-inline xu-form-w115">
+											<select name="quiz1">
+												<option value="">请选择省</option>
+												<option value="浙江" selected="">浙江省</option>
+												<option value="你的工号">江西省</option>
+												<option value="你最喜欢的老师">福建省</option>
+											</select>
+										</div>
+										<div class="layui-input-inline xu-form-w160">
+											<select name="quiz2">
+												<option value="">请选择市</option>
+												<option value="杭州">杭州</option>
+												<option value="宁波">宁波</option>
+												<option value="温州">温州</option>
+												<option value="温州">台州</option>
+												<option value="温州">绍兴</option>
+											</select>
+										</div>
+										<div class="layui-input-inline xu-form-w240">
+											<select name="quiz3">
+												<option value="">请选择县/区</option>
+												<option value="西湖区">西湖区</option>
+												<option value="余杭区">余杭区</option>
+												<option value="拱墅区">临安市</option>
+											</select>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="iframe-item form-btn-box">
+								<div class="layui-form-item xu-form-MR80 i">
+									<label class="layui-form-label col-hui">统计方式/维度：</label>
+									<div class="layui-input-block xu-form-w285">
+										<select name="city" lay-verify="required">
+											<option value=""></option>
+											<option value="0">按摄像头分类展示</option>
+											<option value="1">按摄像头状态展示</option>
+											<option value="2">按运维日志时间展示</option>
+											<option value="3">按地图位置展示</option>
+										</select>
+									</div>
+								</div>
+								<button class="i">开始查询</button>
+								<div class="line"><img src="../src/images/line.png"></div>
+								<div class="layui-form-item xu-form-MR80 i">
+									<label class="layui-form-label col-hui">报告模板：</label>
+									<div class="layui-input-block xu-form-w285">
+										<select name="city" lay-verify="required">
+											<option value=""></option>
+											<option value="0">模板0</option>
+											<option value="1">模板1</option>
+											<option value="2">模板2</option>
+											<option value="3">模板3</option>
+										</select>
+									</div>
+								</div>
+								<button class="i">生成报告</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<!-- 维修记录 -->
+				<div class="tab-item" style="display: none;">
+				</div>
+			</div>
+		</div>
+	</div>
+<script src="../src/js/plugins/jquery-1.11.3.min.js"></script>
+<script src="../src/plugins/layui-v2.2.6/layui/layui.js"></script>
+<script src="../src/js/plugins/jquery.mCustomScrollbar.js"></script>
+<script src="../src/js/main.js"></script>
+<script>
+layui.use(['form','laydate'], function(){
+	var form = layui.form
+	,laydate = layui.laydate;
+	//日期
+	laydate.render({
+	elem: '#date'
+		,type: 'datetime'
+		,range: '到'
+		,format: 'yyyy年M月d日H时m分s秒'
+	});
+	//监听提交
+	form.on('submit(formDemo)', function(data){
+		layer.msg(JSON.stringify(data.field));
+		return false;
+	});
+});
+</script>
+</body>
+</html>

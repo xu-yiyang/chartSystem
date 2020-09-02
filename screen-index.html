@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="renderer" content="webkit">
+	<meta name="format-detection" content="telephone=no, email=no">
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="apple-mobile-web-app-capable" content="yes">  
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="src/css/plugins/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" type="text/css" href="src/css/main.css">
+	<!-- 图标本地链接 -->
+	<link rel="stylesheet" href="./iconfont/iconfont.css">
+</head>
+<body>
+<div class="xu-wrap">
+	<div class="xu-left-nav">
+		<div class="logo">
+			<a href="index.html"><img src="src/images/logo.png"></a>
+		</div>
+		<ul class="nav-list xiala">
+			<li>
+				<div class="nav-tit cur">
+					<img src="src/images/icon-nav-01.png" class="i">
+					<span class="i">数据页面</span>
+					<img src="src/images/nav-arrow.png" class="nav-arrow i">
+				</div>
+				<div class="sub-nav" style="display: block;">
+					<a href="index.html" class="sessionSet" url="components/index.html" name="首页统计">首页统计</a>
+					<a href="screen-index.html" class="cur">大屏投放</a>
+				</div>
+			</li>
+			<li>
+				<div class="nav-tit">
+					<img src="src/images/icon-nav-02.png" class="i">
+					<span class="i">设备运维管理</span>
+					<img src="src/images/nav-arrow.png" class="nav-arrow i">
+				</div>
+				<div class="sub-nav">
+					<a href="index.html" class="sessionSet" url="components/sb_tongji.html" name="设备常用统计">设备常用统计</a>
+					<a href="index.html" class="sessionSet" url="components/xunjian.html" name="巡检">巡检</a>
+					<a href="index.html" class="sessionSet" url="components/sxt_stater_repair.html" name="摄像头状态和维修">摄像头状态和维修</a>
+					<a href="index.html" class="sessionSet" url="components/video_list.html" name="设备：视频服务器">设备：视频服务器</a>
+					<a href="index.html" class="sessionSet" url="components/zhongduan.html" name="设备：终端">设备：终端</a>
+				</div>
+			</li>
+			<li>
+				<div class="nav-tit">
+					<img src="src/images/icon-nav-03.png" class="i">
+					<span class="i">审计</span>
+					<img src="src/images/nav-arrow.png" class="nav-arrow i">
+				</div>
+				<div class="sub-nav">
+					<a href="index.html" class="sessionSet" url="components/zhongduan.html" name="审计常用统计">审计常用统计</a>
+					<a href="index.html" class="sessionSet" url="components/caozuorizhi.html" name="操作日志">操作日志</a>
+				</div>
+			</li>
+			<li>
+				<div class="nav-tit">
+					<img src="src/images/icon-nav-04.png" class="i">
+					<span class="i">网络安全维护</span>
+					<img src="src/images/nav-arrow.png" class="nav-arrow i">
+				</div>
+				<div class="sub-nav">
+					<a href="index.html" class="sessionSet" url="components/keyi.html" name="可疑登录">可疑登录</a>
+				</div>
+			</li>
+			<li>
+				<div class="nav-tit">
+					<img src="src/images/icon-nav-05.png" class="i">
+					<span class="i">配置</span>
+					<img src="src/images/nav-arrow.png" class="nav-arrow i">
+				</div>
+				<div class="sub-nav">
+					<a href="index.html" class="add_tab" url="components/tanzhen.html" name="探针">探针</a>
+					<a href="index.html" class="add_tab" url="components/sxt_shuxing.html" name="摄像头属性">摄像头属性</a>
+					<a href="index.html" class="add_tab" url="components/zhongduan_shuxing.html" name="终端属性">终端属性</a>
+					<a href="index.html" class="add_tab" url="components/jingyuan_shuxing.html" name="警员属性">警员属性</a>
+					<a href="index.html" class="add_tab" url="components/baobiao.html" name="报表预定义">报表预定义</a>
+					<a href="index.html" class="add_tab" url="components/admin.html" name="管理员管理">管理员管理</a>
+				</div>
+			</li>
+		</ul>
+		<!-- <div class="nav-btn">
+			<img src="src/images/collect-nav.png">
+		</div> -->
+	</div>
+	<div class="xu-right-body">
+		<div class="xu-right-main">
+			<div class="xu-header xu-h12">
+				<div class="xu-header-fun">
+					<span class="screen-btn float-left">
+						<a href="screen.html" target="_blnck">
+							<img src="src/images/icon-screen.png" class="i">
+							<em class="i">大屏投放</em>
+						</a>
+					</span>
+					<span class="exit-btn float-right">
+						<em class="i"><i>李胜男</i> 欢迎您</em>
+						<a href="login.html"><img src="src/images/icon-exit.png" class="i" title="退出"></a>
+					</span>
+				</div>
+				<div class="xu-header-logo">
+					<img src="src/images/header-bg.png" class="header-bg">
+					<img src="src/images/header.png" class="text">
+				</div>
+			</div>
+			<div class="xu-main xu-h88">
+				<div class="xu-row xu-h65">
+					<div class="xu-col-3">
+						<div class="item-chart-body i xu-h5">
+							<div class="item-chart">
+								<h3>
+									摄像头每月访问数
+								</h3>
+								<div class="chart-tit-img">
+									<!-- <img src="src/images/article.png"> -->
+									<img src="src/images/chart-tit-img.png" class="tit-img">
+								</div>
+								<div class="chart" id="eharts-access"></div>
+							</div>
+						</div>
+						<div class="item-chart-body i xu-h5">
+							<div class="item-chart">
+								<h3>
+									摄像头每月维护数
+								</h3>
+								<div class="chart-tit-img">
+									<!-- <img src="src/images/article.png"> -->
+									<img src="src/images/chart-tit-img.png" class="tit-img">
+								</div>
+								<div class="chart" id="eharts-maintenance"></div>
+							</div>
+						</div>
+					</div>
+					<div class="xu-col-4">
+						<div class="item-chart-body">
+							<div class="xu-map-box">
+								<div class="after" style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://frontcases.gunaimu.com/static/xiaoxu/gongan/src/images/map-border.png', sizingMethod='scale');"></div>
+								<div class="xu-marquee">
+									<marquee behavior="" direction="" align="absmiddle" onmouseover=stop() onmouseout=start()>
+										<a href="javascript:;">
+											<em class="i">账号admin异常登录！</em>
+										</a>
+										<a href="javascript:;">
+											<em class="i">账号admin异常登录！</em>
+										</a>
+									</marquee>
+								</div>
+								<div id="eharts-map"></div>
+								<div class="map-tip left-tip" style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://frontcases.gunaimu.com/static/xiaoxu/gongan/src/images/tip-border.png', sizingMethod='scale');">
+									<label>
+										<p>摄像头总数</p>
+										<span>
+											<em>6891</em>
+											<i>次</i>
+										</span>
+									</label>
+									<label>
+										<p>本月维护总数</p>
+										<span>
+											<em>6891</em>
+											<i>次</i>
+										</span>
+									</label>
+									<label>
+										<p>本月新增总数</p>
+										<span>
+											<em>6891</em>
+											<i>次</i>
+										</span>
+									</label>
+								</div>
+								<div class="map-tip right-tip" style="filter: progid:DXImageTransform.Microsoft.AlphaImageLoader(src='http://frontcases.gunaimu.com/static/xiaoxu/gongan/src/images/tip-border.png', sizingMethod='scale');">
+									<label>
+										<p>异常总数</p>
+										<span>
+											<em>6891</em>
+											<i>次</i>
+										</span>
+									</label>
+									<label>
+										<p>本月新增异常数</p>
+										<span>
+											<em>6891</em>
+											<i>次</i>
+										</span>
+									</label>
+									<label>
+										<p>离线率</p>
+										<span>
+											<em>6891</em>
+											<i>次</i>
+										</span>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="xu-col-3">
+						<div class="item-chart-body i xu-h5">
+							<div class="item-chart">
+								<h3>
+									当前摄像头异常总数
+								</h3>
+								<div class="chart-tit-img">
+									<!-- <img src="src/images/article.png"> -->
+									<img src="src/images/chart-tit-img.png" class="tit-img">
+								</div>
+								<div class="chart" id="eharts-abnormal"></div>
+							</div>
+						</div>
+						<div class="item-chart-body i xu-h5">
+							<div class="item-chart">
+								<h3>
+									摄像头当前状态
+								</h3>
+								<div class="chart-tit-img">
+									<!-- <img src="src/images/article.png"> -->
+									<img src="src/images/chart-tit-img.png" class="tit-img">
+								</div>
+								<div class="chart" id="eharts-state"></div>
+								<div class="state-tip">
+									<label>
+										<p>9760,342</p>
+										<span>
+											<i class="i">摄像头总数</i>
+										</span>
+									</label>
+									<label>
+										<p>9760,342</p>
+										<span>
+											<em class="i" style="background: #01a2f0;"></em>
+											<i class="i">在线状态</i>
+										</span>
+									</label>
+									<label>
+										<p>9760,342</p>
+										<span>
+											<em class="i" style="background: #fe6682;"></em>
+											<i class="i">不在线状态</i>
+										</span>
+									</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="xu-row xu-h35">
+					<div class="xu-col-3">
+						<div class="item-chart-body">
+							<div class="item-chart">
+								<h3>
+									新增摄像头总数
+								</h3>
+								<div class="chart-tit-img">
+									<!-- <img src="src/images/article.png"> -->
+									<img src="src/images/chart-tit-img.png" class="tit-img">
+								</div>
+								<div class="chart" id="eharts-total"></div>
+							</div>
+						</div>
+					</div>
+					<div class="xu-col-4">
+						<div class="item-chart-body">
+							<div class="xu-col-49 float-left">
+								<div class="item-chart">
+									<h3>
+										实时访问
+									</h3>
+									<div class="chart-tit-img">
+										<!-- <img src="src/images/article.png"> -->
+										<img src="src/images/chart-tit-img.png" class="tit-img">
+									</div>
+									<ul class="xu-table-list xiala">
+										<li>
+											<span>管理2532</span>
+											<span>189.2543.56</span>
+											<span>04-12 06:45</span>
+										</li>
+										<li class="even">
+											<span>管理2532</span>
+											<span>189.2543.56</span>
+											<span>04-12 06:45</span>
+										</li>
+										<li>
+											<span>管理2532</span>
+											<span>189.2543.56</span>
+											<span>04-12 06:45</span>
+										</li>
+										<li class="even">
+											<span>管理2532</span>
+											<span>189.2543.56</span>
+											<span>04-12 06:45</span>
+										</li>
+										<li>
+											<span>管理2532</span>
+											<span>189.2543.56</span>
+											<span>04-12 06:45</span>
+										</li>
+										<li class="even">
+											<span>管理2532</span>
+											<span>189.2543.56</span>
+											<span>04-12 06:45</span>
+										</li>
+										<li>
+											<span>管理2532</span>
+											<span>189.2543.56</span>
+											<span>04-12 06:45</span>
+										</li>
+										<li class="even">
+											<span>管理2532</span>
+											<span>189.2543.56</span>
+											<span>04-12 06:45</span>
+										</li>
+										<li>
+											<span>管理2532</span>
+											<span>189.2543.56</span>
+											<span>04-12 06:45</span>
+										</li>
+										<li class="even">
+											<span>管理2532</span>
+											<span>189.2543.56</span>
+											<span>04-12 06:45</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="xu-col-49 float-right">
+								<div class="item-chart">
+									<h3>
+										实时运维
+									</h3>
+									<div class="chart-tit-img">
+										<!-- <img src="src/images/article.png"> -->
+										<img src="src/images/chart-tit-img.png" class="tit-img">
+									</div>
+									<ul class="xu-table-list xiala">
+										<li>
+											<span>管理2532</span>
+											<span>189.2543.56</span>
+											<span>04-12 06:45</span>
+										</li>
+										<li>
+											<span>管理2532</span>
+											<span>189.2543.56</span>
+											<span>04-12 06:45</span>
+										</li>
+										<li>
+											<span>管理2532</span>
+											<span>189.2543.56</span>
+											<span>04-12 06:45</span>
+										</li>
+										<li class="even">
+											<span>管理2532</span>
+											<span>189.2543.56</span>
+											<span>04-12 06:45</span>
+										</li>
+										<li>
+											<span>管理2532</span>
+											<span>189.2543.56</span>
+											<span>04-12 06:45</span>
+										</li>
+										<li class="even">
+											<span>管理2532</span>
+											<span>189.2543.56</span>
+											<span>04-12 06:45</span>
+										</li>
+										<li>
+											<span>管理2532</span>
+											<span>189.2543.56</span>
+											<span>04-12 06:45</span>
+										</li>
+										<li class="even">
+											<span>管理2532</span>
+											<span>189.2543.56</span>
+											<span>04-12 06:45</span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="xu-col-3">
+						<div class="item-chart-body">
+							<div class="item-chart">
+								<h3>
+									摄像头警钟分布
+								</h3>
+								<div class="chart-tit-img">
+									<!-- <img src="src/images/article.png"> -->
+									<img src="src/images/chart-tit-img.png" class="tit-img">
+								</div>
+								<div class="chart" id="eharts-distribution"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script src="src/js/plugins/jquery-1.11.3.min.js"></script>
+<script src="src/js/map-config.js"></script>
+<script src="https://cdn.bootcss.com/echarts/3.8.5/echarts.js"></script>
+<script src="src/js/plugins/jquery.mousewheel.min.js"></script>
+<script src="src/js/plugins/jquery.mCustomScrollbar.js"></script>
+<script src="src/js/main.js"></script>
+<script src="src/js/charts.js"></script>
+<script>
+// function printdiv(printpage) {
+//     var headhtml = "<html><head><title></title></head><body>";
+//     var foothtml = "</body>";
+//     // 获取div中的html内容
+//     // var newhtml = document.all.item(printpage).innerHTML;
+//     // 获取div中的html内容，jquery写法如下
+//     var newhtml= $("." + printpage).html();
+
+//     // 获取原来的窗口界面body的html内容，并保存起来
+//     var oldhtml = document.body.innerHTML;
+
+//     // 给窗口界面重新赋值，赋自己拼接起来的html内容
+//     document.body.innerHTML = headhtml + newhtml + foothtml;
+//     // 调用window.print方法打印新窗口
+//     window.print();
+
+//     // 将原来窗口body的html值回填展示
+//     document.body.innerHTML = oldhtml;
+//     return false;
+// }
+</script>
+</body>
+</html>

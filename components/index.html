@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<!-- 图标本地链接 -->
+	<!-- <link rel="stylesheet" href="./iconfont/iconfont.css"> -->
+	<!-- 图标在线链接 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_644589_0x9fq5zt1g85xw29.css">
+	 <link rel="stylesheet" type="text/css" href="../src/plugins/layui-v2.2.6/layui/css/layui.css">
+	<link rel="stylesheet" type="text/css" href="../src/css/main.css">
+</head>
+<body>
+	<div class="xu-iframe-wrap">
+		<div class="xu-breadcrumb">
+			<span>数据页面</span>
+			<i>/</i>
+			<em>首页统计</em>
+		</div>
+		<div class="iframe-item">
+			<h3 class="iframe-item-title">筛选区域</h3>
+			<div class="xu-form">
+				<!-- <label class="xu-select">
+					<em class="i label-name">选择区域</em>
+					<div class="i select xu-form-w360">
+						<span>马鞍山</span>
+						<ul>
+							<li>马鞍山</li>
+							<li>泰山</li>
+							<li>黄山</li>
+						</ul>
+					</div>
+				</label> -->
+				<form class="layui-form" action="">
+					<div class="layui-form-item">
+						<label class="layui-form-label">选择区域</label>
+						<div class="layui-input-block xu-form-w360">
+							<div class="layui-inline">
+								<select id="province" name="province" lay-verify="required">
+									<option value="">请选择省</option>
+								</select>
+							</div>
+							<div class="layui-inline">
+								<select id="county" name="county" lay-verify="required">
+									<option value="">请选择市</option>
+								</select>
+							</div>
+							<div class="layui-inline">
+								<select id="city" name="city" lay-verify="required">
+									<option value="">请选择区域</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="iframe-item">
+			<h3 class="iframe-item-title">行政区划列表</h3>
+			<div class="xu-table">
+				<table class="layui-hide" id="test"></table>
+				<div class="table-page">
+					<a href="javascript:;" class="i">&lt;</a>
+					<ul class="i">
+						<li class="cur">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>
+					<a href="javascript:;" class="i">&gt;</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<script src="../src/js/plugins/jquery-1.11.3.min.js"></script>
+<script src="../src/plugins/layui-v2.2.6/layui/layui.js"></script>
+<script src="../src/js/plugins/jquery.mCustomScrollbar.js"></script>
+<script src="../src/js/main.js"></script>
+<script>
+layui.use('form', function(){
+	var form = layui.form;
+	//监听提交a   
+	form.on('submit(formDemo)', function(data){
+		layer.msg(JSON.stringify(data.field));
+		return false;
+	});
+});
+layui.use('table', function(){
+  var table = layui.table;
+  
+  table.render({
+    elem: '#test'
+    ,url:'http://www.layui.com/demo/table/user/'
+    ,cellMinWidth: 80 //全局定义常规单元格的最小宽度，layui 2.2.1 新增
+    ,cols: [[
+      {field:'id', width:80, title: 'ID', sort: true}
+      ,{field:'username', width:80, title: '用户名'}
+      ,{field:'sex', width:80, title: '性别', sort: true}
+      ,{field:'city', width:80, title: '城市'}
+      ,{field:'sign', title: '签名', width: '30%', minWidth: 100} //minWidth：局部定义当前单元格的最小宽度，layui 2.2.1 新增
+      ,{field:'experience', title: '积分', sort: true}
+      ,{field:'score', title: '评分', sort: true}
+      ,{field:'classify', title: '职业'}
+      ,{field:'wealth', width:137, title: '财富', sort: true}
+    ]]
+  });
+});
+</script>
+</body>
+</html>

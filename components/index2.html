@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<!-- 图标本地链接 -->
+	<!-- <link rel="stylesheet" href="./iconfont/iconfont.css"> -->
+	<!-- 图标在线链接 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_644589_0x9fq5zt1g85xw29.css">
+	<link rel="stylesheet" type="text/css" href="../src/plugins/layui-v2.2.6/layui/css/layui.css">
+	<link rel="stylesheet" type="text/css" href="../src/css/main.css">
+</head>
+<body>
+	<div class="xu-iframe-wrap">
+		<div class="xu-breadcrumb">
+			<span>数据页面</span>
+			<i>/</i>
+			<em>首页统计</em>
+		</div>
+		<div class="iframe-item">
+			<h3 class="iframe-item-title">筛选区域</h3>
+			<div class="xu-form">
+				<!-- <label class="xu-select">
+					<em class="i label-name">选择区域</em>
+					<div class="i select xu-form-w360">
+						<span>马鞍山</span>
+						<ul>
+							<li>马鞍山</li>
+							<li>泰山</li>
+							<li>黄山</li>
+						</ul>
+					</div>
+				</label> -->
+				<form class="layui-form" action="">
+					<div class="layui-form-item">
+						<label class="layui-form-label">选择区域</label>
+						<div class="layui-input-block xu-form-w360">
+							<select name="city" lay-verify="required">
+								<option value=""></option>
+								<option value="0">马鞍山</option>
+								<option value="1">泰山</option>
+								<option value="2">黄山</option>
+							</select>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="iframe-item">
+			<h3 class="iframe-item-title">行政区划列表</h3>
+			<div class="xu-table">
+				<table>
+					<thead>
+						<tr>
+							<th>行政区域</th>
+							<th>
+								摄像头总数
+								<span class="sort">
+									<em class="cur"><i class="iconfont">&#xe7fe;</i></em>
+									<em><i class="iconfont">&#xe7ff;</i></em>
+								</span>
+							</th>
+							<th>目前离线/离线率</th>
+							<th>经纬度采集数/推送率</th>
+							<th>
+								当月维护数
+								<span class="sort">
+									<em class="cur"><i class="iconfont">&#xe7fe;</i></em>
+									<em><i class="iconfont">&#xe7ff;</i></em>
+								</span>
+							</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>西湖区文一西路花蒋路口蒋村商务中心</td>
+							<td>56892.23</td>
+							<td>1596次 / 46%</td>
+							<td>1596次 / 46%</td>
+							<td>6533.20次</td>
+						</tr>
+						<tr>
+							<td>西湖区文一西路花蒋路口蒋村商务中心</td>
+							<td>56892.23</td>
+							<td>1596次 / 46%</td>
+							<td>1596次 / 46%</td>
+							<td>6533.20次</td>
+						</tr>
+						<tr>
+							<td>西湖区文一西路花蒋路口蒋村商务中心</td>
+							<td>56892.23</td>
+							<td>1596次 / 46%</td>
+							<td>1596次 / 46%</td>
+							<td>6533.20次</td>
+						</tr>
+						<tr>
+							<td>西湖区文一西路花蒋路口蒋村商务中心</td>
+							<td>56892.23</td>
+							<td>1596次 / 46%</td>
+							<td>1596次 / 46%</td>
+							<td>6533.20次</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="table-page">
+					<a href="javascript:;" class="i">&lt;</a>
+					<ul class="i">
+						<li class="cur">1</li>
+						<li>2</li>
+						<li>3</li>
+						<li>4</li>
+					</ul>
+					<a href="javascript:;" class="i">&gt;</a>
+				</div>
+			</div>
+		</div>
+	</div>
+<script src="../src/js/plugins/jquery-1.11.3.min.js"></script>
+<script src="../src/plugins/layui-v2.2.6/layui/layui.js"></script>
+<script src="../src/js/plugins/jquery.mCustomScrollbar.js"></script>
+<script src="../src/js/main.js"></script>
+<script>
+layui.use('form', function(){
+	var form = layui.form;
+	//监听提交
+	form.on('submit(formDemo)', function(data){
+		layer.msg(JSON.stringify(data.field));
+		return false;
+	});
+});
+</script>
+</body>
+</html>

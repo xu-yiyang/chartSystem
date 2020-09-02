@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../src/css/plugins/jquery.mCustomScrollbar.css">
+	<link rel="stylesheet" type="text/css" href="../src/css/main.css">
+	<!-- 百度地图 -->
+	<script src="http://api.map.baidu.com/api?v=2.0&ak=Pg78EjHlM1Ma0Bs5gZwkmgrQ"></script>
+	<!-- 图标本地链接 -->
+	<!-- <link rel="stylesheet" href="./iconfont/iconfont.css"> -->
+	<!-- 图标在线链接 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_644589_0x9fq5zt1g85xw29.css">
+</head>
+<body>
+	<div class="xu-iframe-wrap">
+		<div class="xu-breadcrumb">
+			<span>设备运维管理</span>
+			<i>/</i>
+			<em>设备常用统计（设备统计）</em>
+		</div>
+		<div class="iframe-statistics-tab">
+			<span class="cur"><em class="xu-display-table"><i class="xu-table-cell">管理区域所有离线摄像头</i></em></span>
+			<span><em class="xu-display-table"><i class="xu-table-cell">先发现未注册的摄像头</i></em></span>
+			<span onclick="chart_load()"><em class="xu-display-table"><i class="xu-table-cell">按月统计的离线摄像头数目</i></em></span>
+			<span><em class="xu-display-table"><i class="xu-table-cell">统计管理区域摄像头、终端、视频应用服务器数目</i></em></span>
+			<span><em class="xu-display-table"><i class="xu-table-cell">已注册未发现的摄像头</i></em></span>
+			<span onclick="chart_total_load()"><em class="xu-display-table"><i class="xu-table-cell">按月统计的新安装摄像头数目</i></em></span>
+			<a href="sb_chaxun.html" class="btn i">自定义查询</a>
+		</div>
+		<div class="item-tab-box">
+			<div class="tab-item-main">
+				<!-- 管理区域所有的离线摄像头 -->
+				<div class="tab-item">
+					<div class="xu-form xu-form-bottom xu-form-left">
+						<label class="xu-search">
+							<input placeholder="请输入摄像头地址" class="i xu-form-w360">
+							<button class="i">搜索</button>
+						</label>
+					</div>
+					<div class="iframe-item">
+						<div class="xu-table paddingtop">
+							<table>
+								<thead>
+									<tr>
+										<th>摄像头地址</th>
+										<th>设备名称</th>
+										<th>设备号码</th>
+										<th>设备状态</th>
+										<th>聚焦</th>
+										<th>亮度</th>
+										<th>色彩失真</th>
+										<th>视频流</th>
+										<th>
+											安装时间
+											<span class="sort">
+												<em class="cur"><i class="iconfont">&#xe7fe;</i></em>
+												<em><i class="iconfont">&#xe7ff;</i></em>
+											</span>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td mapPointLng=117.5426900 mapPointLat=28.9909670 class="dialog_show">43.166.184.53</td>
+										<td>SBMC_20000</td>
+										<td>devnum_20000</td>
+										<td>在线</td>
+										<td class="red">清楚<i class="iconfont i">&#xe637;</i></td>
+										<td>正常</td>
+										<td>正常</td>
+										<td>流畅</td>
+										<td>2018-01-02 09:10:50</td>
+									</tr>
+									<tr>
+										<td mapPointLng=114.811178 mapPointLat=40.773415 class="dialog_show">43.166.184.53</td>
+										<td>SBMC_20000</td>
+										<td>devnum_20000</td>
+										<td class="red">在线<i class="iconfont i">&#xe637;</i></td>
+										<td>清楚</td>
+										<td>正常</td>
+										<td>正常</td>
+										<td>流畅</td>
+										<td>2018-01-02 09:10:50</td>
+									</tr>
+									<tr>
+										<td mapPointLng=114.811178 mapPointLat=40.773415 class="dialog_show">43.166.184.53</td>
+										<td>SBMC_20000</td>
+										<td>devnum_20000</td>
+										<td>在线</td>
+										<td class="red">清楚<i class="iconfont i">&#xe637;</i></td>
+										<td>正常</td>
+										<td>正常</td>
+										<td>流畅</td>
+										<td>2018-01-02 09:10:50</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="table-page">
+								<a href="javascript:;" class="i">&lt;</a>
+								<ul class="i">
+									<li class="cur">1</li>
+									<li>2</li>
+									<li>3</li>
+									<li>4</li>
+								</ul>
+								<a href="javascript:;" class="i">&gt;</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 先发现未注册的摄像头 -->
+				<div class="tab-item" style="display: none;">
+					<div class="xu-form xu-form-bottom xu-form-left">
+						<label class="xu-search">
+							<input placeholder="请输入摄像头地址" class="i xu-form-w360">
+							<button class="i">搜索</button>
+						</label>
+					</div>
+					<div class="iframe-item">
+						<div class="xu-table paddingtop">
+							<table>
+								<thead>
+									<tr>
+										<th>摄像头地址</th>
+										<th>设备名称</th>
+										<th>设备号码</th>
+										<th>设备状态</th>
+										<th>聚焦</th>
+										<th>亮度</th>
+										<th>色彩失真</th>
+										<th>视频流</th>
+										<th>
+											安装时间
+											<span class="sort">
+												<em class="cur"><i class="iconfont">&#xe7fe;</i></em>
+												<em><i class="iconfont">&#xe7ff;</i></em>
+											</span>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>43.166.184.5311</td>
+										<td>SBMC_20000</td>
+										<td>devnum_20000</td>
+										<td>在线</td>
+										<td class="red">清楚<i class="iconfont i">&#xe637;</i></td>
+										<td>正常</td>
+										<td>正常</td>
+										<td>流畅</td>
+										<td>2018-01-02 09:10:50</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="table-page">
+								<a href="javascript:;" class="i">&lt;</a>
+								<ul class="i">
+									<li class="cur">1</li>
+									<li>2</li>
+									<li>3</li>
+									<li>4</li>
+								</ul>
+								<a href="javascript:;" class="i">&gt;</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 按月统计的离线摄像头数目 -->
+				<div class="tab-item" style="display: none;">
+					<div class="xu-chart-table xu-col-49_5 float-left">
+						<div class="border-style xu-h300p">
+							<div class="chart-tit-img">
+								<img src="../src/images/chart-tit-img.png" class="tit-img">
+								<h3>摄像头离线次数/月</h3>
+							</div>
+							<div class="chart" id="eharts-num"></div>
+						</div>
+						<div class="border-style xu-h300p">
+							<div class="chart-tit-img">
+								<img src="../src/images/chart-tit-img.png" class="tit-img">
+								<h3>目前摄像头状态统计</h3>
+							</div>
+							<div class="chart" id="eharts-state"></div>
+							<div class="state-tip">
+								<label>
+									<p>9760,342</p>
+									<span>
+										<i class="i">摄像头总数</i>
+									</span>
+								</label>
+								<label>
+									<p>9760,342</p>
+									<span>
+										<em class="i" style="background: #01a2f0;"></em>
+										<i class="i">在线状态</i>
+									</span>
+								</label>
+								<label>
+									<p>9760,342</p>
+									<span>
+										<em class="i" style="background: #fe6682;"></em>
+										<i class="i">不在线状态</i>
+									</span>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="xu-chart-table xu-col-49_5 float-right">
+						<div class="border-style xu-h620p xiala">
+							<div class="xu-table">
+								<table>
+									<thead>
+										<tr>
+											<th>年月</th>
+											<th>摄像头离线次数</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 统计管理区域摄像头、终端、视频应用服务器数目 -->
+				<div class="tab-item" style="display: none;">
+					<div class="iframe-item">
+						<div class="xu-table paddingtop">
+							<table>
+								<thead>
+									<tr>
+										<th>行政区</th>
+										<th>摄像头总数</th>
+										<th>终端总数</th>
+										<th>视频应用服务器总数</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>上饶市</td>
+										<td>177</td>
+										<td>2</td>
+										<td>1</td>
+									</tr>
+									<tr>
+										<td>上饶市</td>
+										<td>177</td>
+										<td>2</td>
+										<td>1</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="table-page">
+								<a href="javascript:;" class="i">&lt;</a>
+								<ul class="i">
+									<li class="cur">1</li>
+									<li>2</li>
+									<li>3</li>
+									<li>4</li>
+								</ul>
+								<a href="javascript:;" class="i">&gt;</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 已注册未发现的摄像头 -->
+				<div class="tab-item" style="display: none;">
+					<div class="xu-form xu-form-bottom xu-form-left">
+						<label class="xu-search">
+							<input placeholder="请输入摄像头地址" class="i xu-form-w360">
+							<button class="i">搜索</button>
+						</label>
+					</div>
+					<div class="iframe-item">
+						<div class="xu-table paddingtop">
+							<table>
+								<thead>
+									<tr>
+										<th>摄像头地址</th>
+										<th>设备名称</th>
+										<th>设备号码</th>
+										<th>设备状态</th>
+										<th>聚焦</th>
+										<th>亮度</th>
+										<th>色彩失真</th>
+										<th>视频流</th>
+										<th>
+											安装时间
+											<span class="sort">
+												<em class="cur"><i class="iconfont">&#xe7fe;</i></em>
+												<em><i class="iconfont">&#xe7ff;</i></em>
+											</span>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>43.166.184.5311</td>
+										<td>SBMC_20000</td>
+										<td>devnum_20000</td>
+										<td>在线</td>
+										<td class="red">清楚<i class="iconfont i">&#xe637;</i></td>
+										<td>正常</td>
+										<td>正常</td>
+										<td>流畅</td>
+										<td>2018-01-02 09:10:50</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="table-page">
+								<a href="javascript:;" class="i">&lt;</a>
+								<ul class="i">
+									<li class="cur">1</li>
+									<li>2</li>
+									<li>3</li>
+									<li>4</li>
+								</ul>
+								<a href="javascript:;" class="i">&gt;</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 按月统计的离线摄像头数目 -->
+				<div class="tab-item" style="display: none;">
+					<div class="xu-chart-table">
+						<div class="xu-col-49_5 float-left border-style xu-h300p">
+							<div class="chart-tit-img">
+								<img src="../src/images/chart-tit-img.png" class="tit-img">
+								<h3>新增监视摄像头数量/月</h3>
+							</div>
+							<div class="chart" id="eharts-total"></div>
+						</div>
+						<div class="xu-col-49_5 float-right border-style xu-h300p xiala">
+							<div class="xu-table">
+								<table>
+									<thead>
+										<tr>
+											<th>年月</th>
+											<th>数量</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+										<tr>
+											<td>2017-05</td>
+											<td>1</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+<!-- <div class="table-dialog xu-display-table">
+	<div class="xu-table-cell">
+		<div class="dialog-main">
+			<h3 class="dialog-tit">
+				设备信息
+				<i class="iconfont j-close-dialog">&#xe64c;</i>
+			</h3>
+			<div id="xu-map" class="xu-map">
+				
+			</div>
+			<div class="dialog-msg">
+				<label>
+					<em>摄像头编号：</em>
+					<i>devnum_865</i>
+				</label>
+				<label>
+					<em>归属警种：</em>
+					<i>交管局</i>
+				</label>
+				<label>
+					<em>IP地址：</em>
+					<i>32.62.111.2</i>
+				</label>
+				<label>
+					<em>摄像头名称：</em>
+					<i>name-11981</i>
+				</label>
+				<label>
+					<em>状态：</em>
+					<i>离线</i>
+				</label>
+				<label>
+					<em>MAC地址：</em>
+					<i>MACDZ_865</i>
+				</label>
+			</div>
+			<div class="dialog-btn">
+				<a href="##">
+					查看全部访问日志
+				</a>
+				<a href="##">
+					查看全部维修记录
+				</a>
+			</div>
+		</div>
+	</div>
+</div> -->
+<script src="../src/js/plugins/jquery-1.11.3.min.js"></script>
+<script src="../src/js/plugins/jquery.mCustomScrollbar.js"></script>
+<script src="../src/js/plugins/jquery.mousewheel.min.js"></script>
+<script src="https://cdn.bootcss.com/echarts/3.8.5/echarts.js"></script>
+<script src="../src/js/main.js"></script>
+<script src="../src/js/dialog.js"></script>
+<script>
+	function chart_load(argument) {
+		setTimeout(function() {
+			// 摄像头数量----柱状图
+			var numChart = echarts.init(document.getElementById('eharts-num'));
+		    numOption = {
+		        tooltip: {
+		            trigger: 'item',
+		            show:screen ? false : true,
+		            axisPointer: { // 坐标轴指示器，坐标轴触发有效
+		                type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+		            },
+		            position: "top",
+		            formatter: function(params) {
+		                return "<div class='tooltipTop'><div class='tooltipTxtTop'></div>" + params.value + "</div>";
+		            },
+		            backgroundColor: 'transparent'
+		        },
+		        "legend": {
+				    "data": [{
+				        "name": "数量",
+				        "icon": "circle",
+				        "textStyle": {
+				            "color": "#fff"
+				        }
+				    }],
+				    "top": "8%",
+				    'right':'4%'
+				},
+		        grid: {
+		            left: '3%',
+		            right: '4%',
+		            bottom: '3%',
+		            containLabel: true
+		        },
+		        xAxis: [{
+		            data: ['01月','02月','03月','04月','05月','06月'],
+		            axisLine:{
+		            	lineStyle:{
+		            		color:"#1e326a"
+		            	}
+		            },
+			        //刻度横线
+			        axisTick: {
+			            show: false
+			        },
+			        //刻度字样式
+			        axisLabel: {
+			            textStyle: {
+			                color: '#8f97a1',
+			                fontSize:'10',
+			                align: 'center'
+			            },
+			        },
+		        }],
+		        yAxis: [{
+		        	// 刻度线
+		            axisLine:{
+		            	lineStyle:{
+		            		color:"#1e326a"
+		            	}
+		            },
+			        //刻度横线
+			        axisTick: {
+			            show: false
+			        },
+			        //刻度字样式
+			        axisLabel: {
+			            textStyle: {
+			                color: '#8f97a1',
+			                fontSize:'10',
+			                align: 'center'
+			            },
+			            margin: 15,
+			        },
+			        //网格线
+			        splitLine:{
+						lineStyle:{
+							type:'dashed',
+							color: '#1e326a'//网格线颜色
+						}
+					},
+		        }],
+		        series: [{
+		            name: '数量',
+		            type: 'bar',
+		            barWidth: '40%',
+		            data: [500,290,410,350,295,410],
+		            label: {
+		                normal: {
+		                    show: screen ? true : false,
+		                    position: 'top',
+							padding:[6,10,10],
+		                    color:'#fff',
+		                    formatter: '{c}',
+							backgroundColor:{
+								image:label_screen
+							},
+		                }
+		            },
+		            itemStyle: {
+		                normal: {
+		                    color:isIE8==true ? 'rgba(58,45,215, 1)' : new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+		                        offset: 0,
+		                        color: 'rgba(109,215,247, 1)'
+		                    }, {
+		                        offset: 1,
+		                        color:screen!=true ? 'rgba(58,45,215, 1)' : 'transparent'
+		                        // color: 'transparent'
+		                    }]),
+		                    // shadowColor: 'rgba(58,45,215, 0.1)',
+		                    // shadowBlur: 10
+		                }
+		            }
+		        }],
+		    };
+		    numChart.setOption(numOption);
+
+
+			// 目前摄像头状态统计-----环形图
+		    var stateChart = echarts.init(document.getElementById('eharts-state'));
+		    stateOption = {
+		        tooltip: {
+		            trigger: 'item',
+		            formatter: "{b} : {c} ({d}%)"
+		        },
+			    series: [
+			        //中间圆环
+			        {
+			            type: 'pie',
+			            hoverAnimation: false, //鼠标移入变大
+			            center: ['25%', '50%'],
+			            radius: ['60%', '60%'],
+			            color: ['#f81858', 'none'],
+			            label: {
+			                normal: {
+			                    show: true,
+			                    position: 'center',
+			                    formatter: function(params) {
+			                        if (params.dataIndex === 0) {
+			                            return '{percent|' + params.percent + '%}';
+			                        }
+			                    },
+			                    rich: {
+								    percent: {
+								        color: '#fff',
+								        fontSize: 28,
+								        fontWeight: 'bold'
+								    },
+								}
+			                }
+			            },
+			            data:  [{
+						    value: 100000, //时间
+						    name: '在线状态',
+						    itemStyle: {
+						        normal: {
+						            borderColor: "#01a1f0",
+						            borderWidth: 20,
+						        }
+						    },
+						}, {
+						    value: 10000,
+						    name: '不在线状态',
+						    itemStyle: {
+						        normal: {
+						            borderColor: "#fe6682",
+						            borderWidth: 15,
+						        }
+						    },
+						}]
+			        },
+			    ],
+			};
+		    stateChart.setOption(stateOption);
+		},100)
+	}
+
+	function chart_total_load(argument) {
+		setTimeout(function() {
+			// 新增摄像头总数----折线图
+		    var totalChart = echarts.init(document.getElementById('eharts-total'));
+			var totalData=[500,290,410,350,295,410];//数据
+			var xTotaldata=['01月','02月','03月','04月','05月','06月'];//y轴刻度
+		    totalOption = {
+		        tooltip: {
+		            trigger: 'item',
+		            show:screen ? false : true,
+		            axisPointer: { // 坐标轴指示器，坐标轴触发有效
+		                type: 'shadow' // 默认为直线，可选为：'line' | 'shadow'
+		            },
+		            // position: "right",
+		          	position: function (point, params, dom, rect, size) {
+					    // 固定在顶部
+					    return 'top';
+					},
+		            formatter: function(params) {
+		                return "<div class='tooltipTop'><div class='tooltipTxtTop'></div>" + params.value + "</div>";
+		            },
+		            backgroundColor: 'transparent'
+		        },
+		        "legend": {
+				    "data": [{
+				        "name": "摄像头数",
+				        "icon": "circle",
+				        "textStyle": {
+				            "color": "#fff"
+				        }
+				    }],
+				    "top": "8%",
+				    'right':'4%'
+				},
+		        grid: {
+		            left: '3%',
+		            right: '4%',
+		            bottom: '3%',
+		            containLabel: true
+		        },
+		        xAxis: [{
+		            data: xTotaldata,
+				    boundaryGap: false,
+		        	// 刻度线
+		            axisLine:{
+		            	lineStyle:{
+		            		color:"#1e326a"
+		            	}
+		            },
+			        //刻度横线
+			        axisTick: {
+			            show: false
+			        },
+			        //刻度字样式
+			        axisLabel: {
+			            textStyle: {
+			                color: '#8f97a1',
+			                fontSize:'10',
+			                align: 'center'
+			            },
+			        },
+			        //网格线
+			        splitLine:{
+			        	show:true,
+				        interval: 'auto',
+						lineStyle:{
+							type:'dashed',
+							color: '#1e326a'//网格线颜色
+						}
+					},
+		        }],
+		        yAxis: [{
+		        	// 刻度线
+		            axisLine:{
+		            	lineStyle:{
+		            		color:"#1e326a"
+		            	}
+		            },
+			        //刻度横线
+			        axisTick: {
+			            show: false
+			        },
+			        //刻度字样式
+			        axisLabel: {
+			            textStyle: {
+			                color: '#8f97a1',
+			                fontSize:'10',
+			                align: 'center'
+			            },
+			            margin: 15,
+			        },
+			        //网格线
+			        splitLine:{
+						lineStyle:{
+							type:'dashed',
+							color: '#1e326a'//网格线颜色
+						}
+					},
+		        }],
+		        series: [{
+		                type: 'line',
+		                name: '摄像头数',
+				        symbol:'image://'+icon_line_green,
+				        symbolSize:'10',
+		                data:totalData,
+		                itemStyle: {
+		                    normal: {
+		                        color: '#1af9e9',
+		                    }
+		                },
+			            label: {
+			                normal: {
+			                    show: screen ? true : false,
+			                    position: 'top',
+								padding:[6,10,10],
+			                    color:'#fff',
+			                    formatter: '{c}',
+								backgroundColor:{
+									image:label_screen
+								},
+			                }
+			            },
+		                areaStyle: {
+		                    normal: {
+		                        color:isIE8==true ? 'rgba(18,90,172, 1)' : new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+		                            offset: 0,
+		                            color: 'rgba(6,154,168, 1)'
+		                        }, {
+		                            offset: 1,
+		                            color: 'rgba(18,90,172, 1)'
+		                        }]),
+		                    }
+		                }
+		            }
+		        ],
+		    };
+		    totalChart.setOption(totalOption);
+	    },100)
+	}
+</script>
+</body>
+</html>

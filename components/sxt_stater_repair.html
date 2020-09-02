@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<!-- 图标本地链接 -->
+	<!-- <link rel="stylesheet" href="./iconfont/iconfont.css"> -->
+	<!-- 图标在线链接 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_644589_0x9fq5zt1g85xw29.css">
+	<link rel="stylesheet" type="text/css" href="../src/css/main.css">
+	<!-- 百度地图 -->
+	<script src="http://api.map.baidu.com/api?v=2.0&ak=Pg78EjHlM1Ma0Bs5gZwkmgrQ"></script>
+</head>
+<body>
+	<div class="xu-iframe-wrap">
+		<div class="xu-breadcrumb">
+			<span>设备运维管理</span>
+			<i>/</i>
+			<em>摄像头状态列表+维修记录</em>
+		</div>
+
+		<div class="item-tab-box">
+			<div class="iframe-item-tab">
+				<span class="cur">状态</span>
+				<span>维修记录</span>
+			</div>
+			<div class="tab-item-main">
+				<!-- 状态 -->
+				<div class="tab-item">
+					<div class="xu-form xu-form-bottom xu-form-right">
+						<label class="xu-search">
+							<input placeholder="请输入状态的摄像头地址" class="i xu-form-w360">
+							<button class="i">搜索</button>
+						</label>
+					</div>
+					<div class="iframe-item">
+						<div class="xu-table paddingtop">
+							<table>
+								<thead>
+									<tr>
+										<th>摄像头地址</th>
+										<th>设备名称</th>
+										<th>设备号码</th>
+										<th>设备状态</th>
+										<th>聚焦</th>
+										<th>亮度</th>
+										<th>色彩失真</th>
+										<th>视频流</th>
+										<th>
+											安装时间
+											<span class="sort">
+												<em class="cur"><i class="iconfont">&#xe7fe;</i></em>
+												<em><i class="iconfont">&#xe7ff;</i></em>
+											</span>
+										</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td mapPointLng=114.811178 mapPointLat=40.773415 class="dialog_show">43.166.184.53</td>
+										<td>SBMC_20000</td>
+										<td>devnum_20000</td>
+										<td>在线</td>
+										<td class="red">清楚<i class="iconfont i">&#xe637;</i></td>
+										<td>正常</td>
+										<td>正常</td>
+										<td>流畅</td>
+										<td>2018-01-02 09:10:50</td>
+									</tr>
+									<tr>
+										<td mapPointLng=114.811178 mapPointLat=40.773415 class="dialog_show">43.166.184.53</td>
+										<td>SBMC_20000</td>
+										<td>devnum_20000</td>
+										<td class="red">在线<i class="iconfont i">&#xe637;</i></td>
+										<td>清楚</td>
+										<td>正常</td>
+										<td>正常</td>
+										<td>流畅</td>
+										<td>2018-01-02 09:10:50</td>
+									</tr>
+									<tr>
+										<td mapPointLng=114.811178 mapPointLat=40.773415 class="dialog_show">43.166.184.53</td>
+										<td>SBMC_20000</td>
+										<td>devnum_20000</td>
+										<td>在线</td>
+										<td class="red">清楚<i class="iconfont i">&#xe637;</i></td>
+										<td>正常</td>
+										<td>正常</td>
+										<td>流畅</td>
+										<td>2018-01-02 09:10:50</td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="table-page">
+								<a href="javascript:;" class="i">&lt;</a>
+								<ul class="i">
+									<li class="cur">1</li>
+									<li>2</li>
+									<li>3</li>
+									<li>4</li>
+								</ul>
+								<a href="javascript:;" class="i">&gt;</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- 维修记录 -->
+				<div class="tab-item" style="display: none;">
+					<div class="xu-form xu-form-bottom xu-form-right">
+						<label class="xu-search">
+							<input placeholder="请输入维修的摄像头地址" class="i xu-form-w360">
+							<button class="i">搜索</button>
+						</label>
+					</div>
+					<div class="iframe-item">
+						<div class="xu-table paddingtop">
+							<table>
+								<thead>
+									<tr>
+										<th>摄像头地址</th>
+										<th>设备名称</th>
+										<th>设备号码</th>
+										<th>维护动作</th>
+										<th>
+											开始时间
+											<span class="sort">
+												<em class="cur"><i class="iconfont">&#xe7fe;</i></em>
+												<em><i class="iconfont">&#xe7ff;</i></em>
+											</span>
+										</th>
+										<th>
+											结束时间
+											<span class="sort">
+												<em class="cur"><i class="iconfont">&#xe7fe;</i></em>
+												<em><i class="iconfont">&#xe7ff;</i></em>
+											</span>
+										</th>
+										<th>维护时长</th>
+										<th>发送短信</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td mapPointLng=114.811178 mapPointLat=40.773415 class="dialog_show">43.166.184.53</td>
+										<td>SBMC_20000</td>
+										<td>devnum_20000</td>
+										<td>摄像头亮度异常</td>
+										<td>2018-02-02 09:10:50</td>
+										<td>2018-02-02 09:14:22</td>
+										<td>3分32秒</td>
+										<td><a href="##"><i class="iconfont">&#xe77c;</i></a></td>
+									</tr>
+									<tr>
+										<td mapPointLng=114.811178 mapPointLat=40.773415 class="dialog_show">43.166.184.53</td>
+										<td>SBMC_20000</td>
+										<td>devnum_20000</td>
+										<td>摄像头亮度异常</td>
+										<td>2018-02-02 09:10:50</td>
+										<td>2018-02-02 09:14:22</td>
+										<td>3分32秒</td>
+										<td><a href="##"><i class="iconfont">&#xe77c;</i></a></td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="table-page">
+								<a href="javascript:;" class="i">&lt;</a>
+								<ul class="i">
+									<li class="cur">1</li>
+									<li>2</li>
+									<li>3</li>
+									<li>4</li>
+								</ul>
+								<a href="javascript:;" class="i">&gt;</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<script src="../src/js/plugins/jquery-1.11.3.min.js"></script>
+<script src="../src/js/plugins/jquery.mCustomScrollbar.js"></script>
+<script src="../src/js/main.js"></script>
+<script src="../src/js/dialog.js"></script>
+<script>
+</script>
+</body>
+</html>

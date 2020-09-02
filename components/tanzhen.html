@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<!-- 图标本地链接 -->
+	<!-- <link rel="stylesheet" href="./iconfont/iconfont.css"> -->
+	<!-- 图标在线链接 -->
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_644589_0x9fq5zt1g85xw29.css">
+	<link rel="stylesheet" type="text/css" href="../src/plugins/layui-v2.2.6/layui/css/layui.css">
+	<link rel="stylesheet" type="text/css" href="../src/css/main.css">
+</head>
+<body>
+	<div class="xu-iframe-wrap">
+		<div class="xu-breadcrumb">
+			<span>配置</span>
+			<i>/</i>
+			<em>探针</em>
+		</div>
+
+		<div class="item-tab-box">
+			<div class="border-style">
+				<form class="layui-form" action="">
+					<table class="tanzhen-table">
+						<thead>
+							<tr style="background: #112461;">
+								<th>工作模式</th>
+								<td colspan="4">
+									<div class="layui-form-item">
+										<div class="layui-input-inline">
+											<input type="radio" name="ms" value="探针" title="探针" checked lay-filter="type">
+											<input type="radio" name="ms" value="云中心" title="云中心" lay-filter="type">
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>地图服务器地址</th>
+								<td colspan="4">
+									<div class="layui-form-item margin1">
+										<div class="layui-input-inline xu-form-w285">
+											<input type="text" value="221.363.186.8814" name="" required  lay-verify="required" autocomplete="off" class="layui-input">
+										</div>
+										<div class="layui-form-mid">配置地图服务器IP地址，包括端口。例如：192.394.8844</div>
+									</div>
+								</td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr style="background: #112e79;">
+								<th colspan="5">
+									<div class="margin2">
+										配置
+									</div>
+								</th>
+							</tr>
+							<tr>
+								<th style="width: 180px;">监控端口</th>
+								<td class="border-right" style="width: 750px;">
+									<div class="layui-form-item margin1">
+										<label class="x-label">端口号：</label>
+										<div class="layui-input-inline xu-form-w285">
+											<select name="port" lay-verify="required">
+												<option value=""></option>
+												<option value="0">221.363.186.8814 </option>
+												<option value="1">221.363.186.8814 </option>
+											</select>
+										</div>
+										<div class="layui-form-mid">原始数据包的监控网络端口，端口不能跟管理端口同一个</div>
+									</div>
+								</td>
+								<th style="width: 180px;">行政区代码</th>
+								<td class="border-right" style="width: 200px;">
+									<div class="layui-form-item">
+										<div class="layui-input-inline xu-form-w130">
+											<input type="text" value="23256" name="" required  lay-verify="required" autocomplete="off" class="layui-input">
+										</div>
+									</div>
+								</td>
+								<td></td>
+							</tr>
+							<tr style="background: #112e79;">
+								<th>数据包采集访问控制</th>
+								<td class="border-right">
+									<div class="layui-form-item margin1">
+										<ul class="add-list">
+											<li>
+												<span>aa</span>
+												<i class="iconfont x-remove">&#xe638;</i>
+											</li>
+										</ul>
+										<label class="x-label">绑定数据包采集访问控制别名</label>
+										<div class="layui-input-inline xu-form-w130">
+											<select name="port" lay-verify="required">
+												<option value=""></option>
+												<option value="aa">aa</option>
+												<option value="bb">bb</option>
+											</select>
+										</div>
+										<a class="x-add"><i class="iconfont">&#xe601;</i></a>
+										<div class="layui-form-mid">当符合访问控制别名时，访问控制为采集。</div>
+									</div>
+								</td>
+								<th>探针UUID别名</th>
+								<td class="border-right">
+									<div class="layui-form-item">
+										<div class="layui-input-inline xu-form-w130">
+											<input type="text" value="221.363.186.88" name="" required  lay-verify="required" autocomplete="off" class="layui-input">
+										</div>
+									</div>
+								</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th>访问控制告警</th>
+								<td class="border-right">
+									<div class="layui-form-item margin1">
+										<ul class="add-list">
+											<li>
+												<span>cc</span>
+												<i class="iconfont x-remove">&#xe638;</i>
+											</li>
+										</ul>
+										<label class="x-label">绑定数据包采集访问控制别名</label>
+										<div class="layui-input-inline xu-form-w130">
+											<select name="port" lay-verify="required">
+												<option value=""></option>
+												<option value="cc">cc</option>
+												<option value="aa">aa</option>
+											</select>
+										</div>
+										<a class="x-add"><i class="iconfont">&#xe601;</i></a>
+										<div class="layui-form-mid">当符合访问控制别名时，访问控制为警告。</div>
+									</div>
+								</td>
+								<th>聚焦模糊阀值</th>
+								<td class="border-right">
+									<div class="layui-form-item">
+										<div class="layui-input-inline xu-form-w65">
+											<input type="text" value="20" name="" required  lay-verify="required" autocomplete="off" class="layui-input">
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="layui-form-item">
+										<label class="x-label">日志聚焦异常</label>
+										<div class="layui-input-inline xu-form-w170">
+											<input type="radio" name="jj" value="启动" title="启动" checked>
+											<input type="radio" name="jj" value="停止" title="停止">
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr style="background: #112e79;">
+								<th>数据库云平台地址</th>
+								<td class="border-right">
+									<div class="layui-form-item margin1">
+										<ul class="add-list">
+											<li>
+												<span>cc</span>
+												<i class="iconfont x-remove">&#xe638;</i>
+											</li>
+										</ul>
+										<div class="layui-input-inline xu-form-w130">
+											<select name="port" lay-verify="required">
+												<option value=""></option>
+												<option value="cc">cc</option>
+												<option value="aa">aa</option>
+											</select>
+										</div>
+										<a class="x-add"><i class="iconfont">&#xe601;</i></a>
+										<div class="layui-form-mid">上传数据到该云平台数据库，可配置多个云平台地址，最多不超过5个</div>
+									</div>
+								</td>
+								<th>亮度阀值</th>
+								<td class="border-right">
+									<div class="layui-form-item">
+										<div class="layui-input-inline xu-form-w65">
+											<input type="text" value="20" name="" required  lay-verify="required" autocomplete="off" class="layui-input">
+										</div>
+										<div class="layui-input-inline xu-form-w65">
+											<input type="text" value="20" name="" required  lay-verify="required" autocomplete="off" class="layui-input">
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="layui-form-item">
+										<label class="x-label">日志亮度异常</label>
+										<div class="layui-input-inline xu-form-w170">
+											<input type="radio" name="ld" value="启动" title="启动" checked>
+											<input type="radio" name="ld" value="停止" title="停止">
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th>数据库备份</th>
+								<td class="border-right">
+									<div class="layui-form-item margin1">
+										<div class="layui-form-mid">数据库备份文件不存在       数据库每天0时0分自动备份</div>
+									</div>
+								</td>
+								<th>颜色失真阀值</th>
+								<td class="border-right">
+									<div class="layui-form-item">
+										<div class="layui-input-inline xu-form-w65">
+											<input type="text" value="1.5" name="" required  lay-verify="required" autocomplete="off" class="layui-input">
+										</div>
+									</div>
+								</td>
+								<td>
+									<div class="layui-form-item">
+										<label class="x-label">日志视频流异常</label>
+										<div class="layui-input-inline xu-form-w170">
+											<input type="radio" name="video" value="启动" title="启动" checked>
+											<input type="radio" name="video" value="停止" title="停止">
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr style="background: #112e79;">
+								<th>日志运行状态</th>
+								<td class="border-right">
+									<div class="layui-form-item margin1">
+										<div class="layui-input-inline xu-form-w170">
+											<input type="radio" name="rz" value="启动" title="启动" checked>
+											<input type="radio" name="rz" value="停止" title="停止">
+										</div>
+									</div>
+								</td>
+								<th>视频卡顿丢帧阀值</th>
+								<td class="border-right">
+									<div class="layui-form-item">
+										<div class="layui-input-inline xu-form-w65">
+											<input type="text" value="20" name="" required  lay-verify="required" autocomplete="off" class="layui-input">
+										</div>
+									</div>
+								</td>
+								<td></td>
+							</tr>
+							<tr>
+								<th>系统运行状态</th>
+								<td class="border-right">
+									<div class="layui-form-item margin1">
+										<div class="layui-input-inline xu-form-w170">
+											<input type="radio" name="xt" value="启动" title="启动" checked>
+											<input type="radio" name="xt" value="停止" title="停止">
+										</div>
+									</div>
+								</td>
+								<th>图形服务器</th>
+								<td class="border-right">
+									<div class="layui-form-item">
+										<div class="layui-input-inline xu-form-w130">
+											<input type="text" value="221.363.186.881" name="" required  lay-verify="required" autocomplete="off" class="layui-input">
+										</div>
+									</div>
+								</td>
+								<td></td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+		</div>
+		<div class="iframe-item form-btn-box" style="text-align: center;">
+			<button class="i" style="margin-bottom: 0;">修改</button>
+		</div>
+	</div>
+<script src="../src/js/plugins/jquery-1.11.3.min.js"></script>
+<script src="../src/plugins/layui-v2.2.6/layui/layui.js"></script>
+<script src="../src/js/plugins/jquery.mCustomScrollbar.js"></script>
+<script src="../src/js/main.js"></script>
+<script>
+var add_lab="";
+layui.use(['form'], function(){
+	var form = layui.form;
+	form.on('select', function(data){
+		add_lab=data.value; //得到被选中的值
+	});   
+	form.on('radio(type)', function(data){
+		if(data.value=='探针'){
+			$(".tanzhen-table tbody").show();
+		}else{
+			$(".tanzhen-table tbody").hide();
+		}
+	});    
+	//监听提交
+	form.on('submit(formDemo)', function(data){
+		layer.msg(JSON.stringify(data.field));
+		return false;
+	});
+});
+$("body").on('click','.x-add',function() {
+	var bol=true;
+	$(this).parents(".layui-form-item").find("li").each(function() {
+		if($(this).find("span").text()==add_lab){
+			bol=false;
+			alert('不能重复添加')
+		}
+	});
+	if(add_lab!="" && bol==true){
+		var h='<li>'+
+			'	<span>'+add_lab+'</span>'+
+			'	<i class="iconfont x-remove">&#xe638;</i>'+
+			'</li>';
+		$(this).parents(".layui-form-item").find('.add-list').append(h)
+	}
+										
+});
+$("body").on('click','.x-remove',function() {
+	var a=confirm('你确定要删除吗?');
+	if(a){
+		$(this).parents('li').remove();									
+	}
+});
+</script>
+</body>
+</html>
